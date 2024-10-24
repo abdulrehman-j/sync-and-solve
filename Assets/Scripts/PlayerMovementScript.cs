@@ -25,25 +25,33 @@ public class PlayerMovementScript : MonoBehaviour
     public float maxFallingSpeed = -10f;
 
     public Animator animator;
+
+    private PlayerScript playerScript; // Reference to the Player script
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerScript = GetComponent<PlayerScript>();
     }
 
     private void Update()
     {
+        if (playerScript.isDead) //do diable movement 
+            return;
+
         horizontal = Input.GetAxis("Horizontal");
         if (isOnPlatform)
         {
             rb.velocity = new Vector2((horizontal * speed) + platformRb.velocity.x, rb.velocity.y);
+            animator.SetFloat("Speed", Mathf.Abs(horizontal*speed));
         }
         else
         {
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+            animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         }
         if (rb.velocity.y < -0.5f) //we are falling
             animator.SetBool("isFalling", true);
-        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+
 
         LimitFallingSpeed();
         CheckGround();
@@ -55,7 +63,7 @@ public class PlayerMovementScript : MonoBehaviour
         // Check if the player's falling speed exceeds the maximum limit
         if (rb.velocity.y < maxFallingSpeed)
         {
-            Debug.Log($"falling velocity {rb.velocity.y}");
+            //Debug.Log($"falling velocity {rb.velocity.y}");
             // Limit the falling speed to the maximum allowed value
             rb.velocity = new Vector2(rb.velocity.x, maxFallingSpeed);
         }

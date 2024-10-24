@@ -38,7 +38,7 @@ public class PlatformMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, pointA.position) < 0.02f)
+        if (Vector2.Distance(transform.position, pointA.position) <= 0.04f)
         {
             if (playerMovementScript.grounded)
             {
@@ -49,7 +49,7 @@ public class PlatformMovementScript : MonoBehaviour
             DirectionCalculate();
 
         }
-        if (Vector2.Distance(transform.position, pointB.position) < 0.02f)
+        if (Vector2.Distance(transform.position, pointB.position) <= 0.04f)
         {
             if (playerMovementScript.grounded)
             {
@@ -103,7 +103,7 @@ public class PlatformMovementScript : MonoBehaviour
     // Coroutine to change gravity scale temporarily
     private IEnumerator ChangeGravityTemporarily()
     {
-        Debug.Log(originalGravity);
+        //Debug.Log(originalGravity);
         playerRb.gravityScale = 10; // Set gravity to 10
         yield return new WaitForSeconds(0.05f); // Wait for 1 second
         playerRb.gravityScale = originalGravity; // Restore original gravity scale
