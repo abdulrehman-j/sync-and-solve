@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    private Color playerColour;
+    public string playerColour;
     private int deathCount = 0;
 
     public bool hasKey = false;

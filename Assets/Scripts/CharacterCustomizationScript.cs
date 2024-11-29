@@ -16,8 +16,14 @@ public class CharacterCustomization : MonoBehaviour
     public Transform buttonParent;         // Parent object for the buttons
     public GameObject buttonPrefab;        // Prefab for the buttons
     public TextMeshProUGUI previewText;           // Text UI element for displaying character name on preview screen
+    
+    private PlayerScript playerScript;
+    private string selectedColour;
 
-
+    private void Awake()
+    {
+        playerScript = GetComponent<PlayerScript>();
+    }
     void Start()
     {
         // Set the first character as the default preview
@@ -25,6 +31,8 @@ public class CharacterCustomization : MonoBehaviour
         {
             ShowCharacterPreview(characterOptions[0].characterPrefab);
             DisplayCharacterName(characterOptions[0].name, characterOptions[0].buttonColor);
+            selectedColour = characterOptions[0].name;
+            playerScript.playerColour = selectedColour;
         }
 
         foreach (var option in characterOptions)
@@ -51,7 +59,7 @@ public class CharacterCustomization : MonoBehaviour
         colorBlock.normalColor = option.buttonColor;           // Normal state color
         colorBlock.highlightedColor = option.buttonColor * 0.6f; // Hover/Highlighted state color (lighten it a bit)
         colorBlock.pressedColor = option.buttonColor * 1.4f;    // Pressed state color (darken it a bit)
-        colorBlock.selectedColor=colorBlock.pressedColor * 1.6f;
+        colorBlock.selectedColor=colorBlock.pressedColor * 0.4f;
         colorBlock.disabledColor = Color.gray;                  // Disabled state color (optional)
 
         // Apply the color block back to the button
@@ -61,6 +69,7 @@ public class CharacterCustomization : MonoBehaviour
         btn.onClick.AddListener(() => {
             Debug.Log("Button clicked for " + option.name);  // Debug log to confirm click
 
+            selectedColour = option.name;
             // Show character preview and update button color
             ShowCharacterPreview(option.characterPrefab);
             DisplayCharacterName(option.name, option.buttonColor);
@@ -90,4 +99,9 @@ public class CharacterCustomization : MonoBehaviour
         previewText.color = textColour;
     }
 
+    public void saveColour()
+    {
+        playerScript.playerColour = selectedColour;
+        Debug.Log(selectedColour + "saved");
+    }
 }
