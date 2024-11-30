@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -7,9 +8,16 @@ public class KeyScript : MonoBehaviour
 {
     PlayerScript playerScript;
 
-    private void Awake()
+    private IEnumerator Start()
     {
-        playerScript =GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
+        // Wait until the player is spawned in the scene
+        while (GameObject.FindGameObjectWithTag("Player") == null)
+        {
+            yield return null; // Wait one frame
+        }
+
+        // Once the player is found, get the PlayerScript component
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,7 +25,11 @@ public class KeyScript : MonoBehaviour
         {
             Debug.Log("Grabbed key");
             this.gameObject.SetActive(false);
-            playerScript.hasKey = true;
+            //playerScript.hasKey = true;
+            // Update player's key state and notify listeners
+            playerScript.TriggerKeyChange(true);
         }
     }
+
+
 }
