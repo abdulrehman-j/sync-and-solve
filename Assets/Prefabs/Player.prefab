@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 2590755621262450837}
   - component: {fileID: 6531377710388031968}
   - component: {fileID: 443237218879738414}
-  m_Layer: 6
+  - component: {fileID: 5191846075209236596}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -180,7 +181,7 @@ MonoBehaviour:
   groundCheck: {fileID: 9126244619035648135}
   groundMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 64
   isOnPlatform: 0
   platformRb: {fileID: 0}
   maxFallingSpeed: -10
@@ -206,6 +207,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5191846075209236596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776430508968002819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e712ca04007c81c4ab13208c61b4ab9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasKey: 0
+  isDead: 0
+  animator: {fileID: 0}
 --- !u!1 &4888480881308871377
 GameObject:
   m_ObjectHideFlags: 0
