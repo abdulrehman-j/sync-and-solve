@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 1
-  rocketAnimator: {fileID: 0}
+  rocketAnimator: {fileID: 2516227651111988283}
   levelCompleteUI: {fileID: 0}
 --- !u!61 &1486688731415285794
 BoxCollider2D:

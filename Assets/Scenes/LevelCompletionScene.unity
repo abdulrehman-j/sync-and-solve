@@ -882,6 +882,11 @@ MonoBehaviour:
   hasKey: 0
   isDead: 0
   animator: {fileID: 0}
+--- !u!95 &1601019183 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2516227651111988283, guid: a16cf7ac953095245a5dd07da9c589b0, type: 3}
+  m_PrefabInstance: {fileID: 7827502493487964253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1717985752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,6 +1483,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9132310470500942786, guid: a16cf7ac953095245a5dd07da9c589b0, type: 3}
+      propertyPath: rocketAnimator
+      value: 
+      objectReference: {fileID: 1601019183}
+    - target: {fileID: 9132310470500942786, guid: a16cf7ac953095245a5dd07da9c589b0, type: 3}
+      propertyPath: levelCompleteUI
+      value: 
+      objectReference: {fileID: 1883782396}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
