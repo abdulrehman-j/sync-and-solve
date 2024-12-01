@@ -36,7 +36,15 @@ public class PlayerMovementScript : MonoBehaviour
     private void Update()
     {
         if (playerScript.isDead) //do diable movement 
+        {
+            animator.SetFloat("Speed", 0f);
+            animator.SetBool("isFalling", false);
+            animator.SetBool("isJumping", false);
+
+            rb.gravityScale = 0;
+            rb.velocity = Vector2.zero;
             return;
+        }
 
         horizontal = Input.GetAxis("Horizontal");
         if (isOnPlatform)

@@ -19,7 +19,6 @@ public class PlatformMovementScript : MonoBehaviour
 
     private float originalGravity;
 
-
     private void Awake()
     {
         playerMovementScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementScript>();       

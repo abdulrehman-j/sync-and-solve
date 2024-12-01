@@ -12,14 +12,23 @@ public class PlayerScript : MonoBehaviour
     public bool isDead = false;
     public Animator animator;
 
+    private Vector3 startPosition;
+
+    void Start()
+    {
+        startPosition = transform.position; // Store the starting position
+    }
+
     private void Update()
     {
         if (isDead)
         {
-            animator.SetBool("isDead", true);
+            if (animator.GetBool("isDead") == false)
+            {
+                animator.SetBool("isDead", true);
+                deathCount++;
+            }
         }
     }
-
-
 
 }
