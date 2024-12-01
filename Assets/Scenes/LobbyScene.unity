@@ -204,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 47195566}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 109212383}
+        m_TargetAssemblyTypeName: Levelselector, Assembly-CSharp
+        m_MethodName: changeLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &47195566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +271,11 @@ GameObject:
   - component: {fileID: 109212376}
   - component: {fileID: 109212378}
   - component: {fileID: 109212379}
+  - component: {fileID: 109212381}
+  - component: {fileID: 109212380}
+  - component: {fileID: 109212384}
+  - component: {fileID: 109212383}
+  - component: {fileID: 109212382}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -421,6 +438,71 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: Level1
+--- !u!114 &109212380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109212371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6165bb6aba42004a9d61ac4003799de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: Level3
+--- !u!114 &109212381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109212371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6165bb6aba42004a9d61ac4003799de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: Level2
+--- !u!114 &109212382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109212371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6165bb6aba42004a9d61ac4003799de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: Level6
+--- !u!114 &109212383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109212371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6165bb6aba42004a9d61ac4003799de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: Level5
+--- !u!114 &109212384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109212371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6165bb6aba42004a9d61ac4003799de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: Level4
 --- !u!1 &121832570
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +719,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 202575674}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 109212380}
+        m_TargetAssemblyTypeName: Levelselector, Assembly-CSharp
+        m_MethodName: changeLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &202575674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1118,9 +1212,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109212378}
-        m_TargetAssemblyTypeName: Change_scene, Assembly-CSharp
-        m_MethodName: go_to_scene_2
+      - m_Target: {fileID: 109212384}
+        m_TargetAssemblyTypeName: Levelselector, Assembly-CSharp
+        m_MethodName: changeLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1325,7 +1419,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1201574326}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 109212382}
+        m_TargetAssemblyTypeName: Levelselector, Assembly-CSharp
+        m_MethodName: changeLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1201574326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1993,7 +2099,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1793480092}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 109212381}
+        m_TargetAssemblyTypeName: Levelselector, Assembly-CSharp
+        m_MethodName: changeLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1793480092
 MonoBehaviour:
   m_ObjectHideFlags: 0
