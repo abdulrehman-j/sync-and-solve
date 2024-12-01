@@ -19,27 +19,45 @@ public class PlatformMovementScript : MonoBehaviour
 
     private float originalGravity;
 
-    private void Awake()
-    {
-        playerMovementScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementScript>();       
-        rb = GetComponent<Rigidbody2D>();
-        playerRb=GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
 
-        originalGravity = playerRb.gravityScale; // Store original gravity scale
-    }
-    // Start is called before the first frame update
-    void Start()
+
+    private IEnumerator Start()
     {
         targetPos = pointB.position;
         DirectionCalculate();
+        // Wait until the player is spawned in the scene
+        while (GameObject.FindGameObjectWithTag("Player") == null)
+        {
+            yield return null; // Wait one frame
+        }
+
+        playerMovementScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementScript>();
+        //rb = GetComponent<Rigidbody2D>();
+        playerRb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+        originalGravity = playerRb.gravityScale; // Store original gravity scale
     }
+
+    private void Awake()
+    {
+        //playerMovementScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementScript>();       
+        rb = GetComponent<Rigidbody2D>();
+        //playerRb=GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+
+        //originalGravity = playerRb.gravityScale; // Store original gravity scale
+    }
+    //// Start is called before the first frame update
+    //void Start()
+    //{
+    //    targetPos = pointB.position;
+    //    DirectionCalculate();
+    //}
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, pointA.position) <= 0.04f)
+        if (Vector2.Distance(transform.position, pointA.position) <= 0.1f)
         {
-            if (playerMovementScript.grounded)
+            if (playerMovementScript.grounded && playerMovementScript.isOnPlatform)
             {
                 StartCoroutine(ChangeGravityTemporarily()); //to temporarly change gravity
             }
@@ -48,12 +66,24 @@ public class PlatformMovementScript : MonoBehaviour
             DirectionCalculate();
 
         }
-        if (Vector2.Distance(transform.position, pointB.position) <= 0.04f)
+        if (Vector2.Distance(transform.position, pointB.position) <= 0.1f)
         {
-            if (playerMovementScript.grounded)
+            if (playerMovementScript.grounded && playerMovementScript.isOnPlatform)
             {
                 StartCoroutine(ChangeGravityTemporarily()); //to temporarly change gravity
             }
+            targetPos = pointA.position;
+            DirectionCalculate();
+        }
+
+        // Check if the platform has passed pointA or pointB and reverse direction if necessary
+        if (HasPassedPoint(pointA.position))
+        {
+            targetPos = pointB.position;
+            DirectionCalculate();
+        }
+        else if (HasPassedPoint(pointB.position))
+        {
             targetPos = pointA.position;
             DirectionCalculate();
         }
@@ -61,10 +91,21 @@ public class PlatformMovementScript : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = moveDirection * speed;
+
     }
     private void DirectionCalculate()
     {
         moveDirection = (targetPos - transform.position).normalized;
+    }
+    private bool HasPassedPoint(Vector3 point)
+    {
+        // Check if the platform has passed a point by comparing the current position with the point
+        // We check this based on the direction of movement
+
+        float dotProduct = Vector3.Dot(moveDirection, point - transform.position);
+
+        // If the dot product is less than 0, the platform has passed the point (it is moving away from it)
+        return dotProduct < 0;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

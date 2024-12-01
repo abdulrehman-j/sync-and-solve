@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerMovementScript : MonoBehaviour
 {
     private float horizontal;
     public float speed = 8f;
-    public float jumpingPower = 5f;
-    public float jumpTime=0.5f;
+    public float jumpingPower = 3f;  // Assuming a value for jumping power
+    public float jumpTime = 0.25f;
     private float jumpTimeValue;
     private bool isJumping;
     private bool isFacingRight = false;
@@ -26,7 +25,8 @@ public class PlayerMovementScript : MonoBehaviour
 
     public Animator animator;
 
-    private PlayerScript playerScript; // Reference to the Player script
+    private PlayerScript playerScript;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,6 +35,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void Update()
     {
+
         if (playerScript.isDead) //do diable movement 
         {
             animator.SetFloat("Speed", 0f);
@@ -43,41 +44,53 @@ public class PlayerMovementScript : MonoBehaviour
 
             rb.gravityScale = 0;
             rb.velocity = Vector2.zero;
-            return;
+
+//        if (playerScript.isDead) // Disable movement if player is dead
+
+//            return;
         }
 
         horizontal = Input.GetAxis("Horizontal");
+
+        // If on platform, add the platform's horizontal velocity
         if (isOnPlatform)
         {
             rb.velocity = new Vector2((horizontal * speed) + platformRb.velocity.x, rb.velocity.y);
-            animator.SetFloat("Speed", Mathf.Abs(horizontal*speed));
+            animator.SetFloat("Speed", Mathf.Abs(horizontal * speed));
         }
         else
         {
-            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+            float currentSpeed = horizontal * speed;
+            if (!grounded) // If the player is in the air, reduce horizontal speed
+            {
+                currentSpeed *= 0.4f; // Adjust this value to control how much the speed is reduced
+            }
+
+            // Apply horizontal movement and vertical jump velocity
+            rb.velocity = new Vector2(currentSpeed, rb.velocity.y);
             animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         }
-        if (rb.velocity.y < -0.5f) //we are falling
-            animator.SetBool("isFalling", true);
 
+        if (rb.velocity.y < -0.5f) // We are falling
+            animator.SetBool("isFalling", true);
 
         LimitFallingSpeed();
         CheckGround();
-        flip();
-        jump();
+        Flip();
+        Jump();
     }
+
     void LimitFallingSpeed()
     {
         // Check if the player's falling speed exceeds the maximum limit
         if (rb.velocity.y < maxFallingSpeed)
         {
-            //Debug.Log($"falling velocity {rb.velocity.y}");
             // Limit the falling speed to the maximum allowed value
             rb.velocity = new Vector2(rb.velocity.x, maxFallingSpeed);
         }
     }
 
-    private void flip()
+    private void Flip()
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
@@ -88,7 +101,7 @@ public class PlayerMovementScript : MonoBehaviour
         }
     }
 
-    private void jump()
+    private void Jump()
     {
         if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && grounded)
         {
@@ -97,19 +110,21 @@ public class PlayerMovementScript : MonoBehaviour
             jumpTimeValue = jumpTime;
             rb.velocity = Vector2.up * jumpingPower;
         }
+
         if ((Input.GetButton("Jump") || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && isJumping)
         {
             if (jumpTimeValue > 0)
             {
                 animator.SetBool("isJumping", true);
                 jumpTimeValue -= Time.deltaTime;
-                rb.velocity = Vector2.up * (jumpingPower);
+                rb.velocity = new Vector2(rb.velocity.x, jumpingPower); // Keep horizontal velocity constant
             }
             else
             {
                 isJumping = false;
             }
         }
+
         if (Input.GetButtonUp("Jump") || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
         {
             isJumping = false;
@@ -119,11 +134,10 @@ public class PlayerMovementScript : MonoBehaviour
     void CheckGround()
     {
         grounded = Physics2D.OverlapAreaAll(groundCheck.bounds.min, groundCheck.bounds.max, groundMask).Length > 0;
-        if(grounded)
+        if (grounded)
         {
             animator.SetBool("isJumping", false);
             animator.SetBool("isFalling", false);
         }
     }
-
 }
