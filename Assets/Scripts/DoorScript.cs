@@ -58,8 +58,11 @@ public class DoorScript : MonoBehaviour
     private void CompleteLevel()
     {
         Debug.Log("Level Complete!");
+        rocketAnimator.updateMode = AnimatorUpdateMode.UnscaledTime; // Ensure the animator uses unscaled time
         rocketAnimator.SetTrigger("TakeOff");  // Play the rocket animation
         ShowLevelCompleteUI();
+        Time.timeScale = 0;
+        StartCoroutine(ResetAnimatorAfterAnimation());
     }
 
     private void ShowLevelCompleteUI()
@@ -67,4 +70,11 @@ public class DoorScript : MonoBehaviour
         if (levelCompleteUI != null)
             levelCompleteUI.SetActive(true);
     }
+
+    private IEnumerator ResetAnimatorAfterAnimation()
+    {
+        yield return new WaitForSecondsRealtime(3f); // Wait for animation (use real-time since Time.timeScale = 0)
+        rocketAnimator.updateMode = AnimatorUpdateMode.Normal; // Reset to default mode
+    }
+
 }

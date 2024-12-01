@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
-    public string playerColour="Blue";
+    public static string playerColour ="Blue";
    //private int deathCount = 0;
 
     public bool hasKey = false;
@@ -15,15 +15,6 @@ public class PlayerScript : MonoBehaviour
     public Animator animator;
     // Event for when the key state changes
     public event Action<bool> OnKeyChanged;
-
-    //private Vector3 startPosition;
-    //PlayerMovementScript playerMovementScript;
-
-    //void Start()
-    //{
-    //    startPosition = transform.position; // Store the starting position
-    //}
-
 
     private void Update()
     {

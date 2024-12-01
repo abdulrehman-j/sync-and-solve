@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LobbyScene.unity
     guid: ba6821aef91c3de4ba3b44b6f9e2d92b
   - enabled: 1
+    path: Assets/Scenes/Demo/ScoreScene.unity
+    guid: 5d63369109c1254428af9df1fc867fb3
+  - enabled: 1
     path: Assets/Scenes/CharacterSelectionScene.unity
     guid: 6137bea5d25ed2241b7d7db8a122675d
   - enabled: 1
