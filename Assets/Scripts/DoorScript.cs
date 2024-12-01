@@ -10,8 +10,15 @@ public class DoorScript : MonoBehaviour
     public Animator rocketAnimator;  // Animator for the rocket door
     public GameObject levelCompleteUI;  // UI for "Level Complete"
 
-    private void Awake()
+    private IEnumerator Start()
     {
+        // Wait until the player is spawned in the scene
+        while (GameObject.FindGameObjectWithTag("Player") == null)
+        {
+            yield return null; // Wait one frame
+        }
+
+        // Once the player is found, get the PlayerScript component
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
     }
 
@@ -24,6 +31,7 @@ public class DoorScript : MonoBehaviour
             {
                 isLocked = false;
                 playerScript.hasKey = false;  // Key is used
+                rocketAnimator.SetBool("isLocked", false);
                 Debug.Log("Door Unlocked");
             }
         }

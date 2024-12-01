@@ -27,6 +27,9 @@
 .vs/
 .vsconfig
 
+#Sonar scanner directory
+.scannerwork/
+
 # Gradle cache directory
 .gradle/
 
