@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerScript : MonoBehaviour
     public Animator animator;
 
     private Vector3 startPosition;
+    PlayerMovementScript playerMovementScript;
 
     void Start()
     {
@@ -27,8 +29,19 @@ public class PlayerScript : MonoBehaviour
             {
                 animator.SetBool("isDead", true);
                 deathCount++;
+                //Debug.Log(deathCount);
+                StartCoroutine(WaitForDeathAnimation());
             }
         }
     }
 
+    // Coroutine to wait for the "isDead" animation to complete
+    private IEnumerator WaitForDeathAnimation()
+    {
+        // Wait until the animation has finished
+        yield return new WaitForSeconds(2f);
+
+        // After the animation finishes, reload the scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
