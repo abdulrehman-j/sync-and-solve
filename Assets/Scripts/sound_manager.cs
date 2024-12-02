@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sound_manager : MonoBehaviour
+public class DontDestroy : MonoBehaviour
 {
-    public static sound_manager instance;
-
-    public void Awake()
+    private void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
+        GameObject[] musicObj = GameObject.FindGameObjectsWithTag("GameMusic");
+        if (musicObj.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
+        DontDestroyOnLoad(this.gameObject);
     }
-    
 }
