@@ -61,7 +61,7 @@ public class PlayerMovementScript : MonoBehaviour
             float currentSpeed = horizontal * speed;
             if (!grounded) // If the player is in the air, reduce horizontal speed
             {
-                currentSpeed *= 0.4f; // Adjust this value to control how much the speed is reduced
+                currentSpeed *= 0.6f; // Adjust this value to control how much the speed is reduced
             }
 
             // Apply horizontal movement and vertical jump velocity
