@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerMovementScript : MonoBehaviour
 {
     private float horizontal;
-    public float speed = 8f;
-    public float jumpingPower = 3f;  // Assuming a value for jumping power
-    public float jumpTime = 0.25f;
+    public float speed = 6f;
+    public float jumpingPower = 4.5f;  // Assuming a value for jumping power
+    public float jumpTime = 0.1f;
     private float jumpTimeValue;
     private bool isJumping;
     private bool isFacingRight = false;
@@ -58,13 +58,9 @@ public class PlayerMovementScript : MonoBehaviour
         }
         else
         {
-            float currentSpeed = horizontal * speed;
-            if (!grounded) // If the player is in the air, reduce horizontal speed
-            {
-                currentSpeed *= 0.6f; // Adjust this value to control how much the speed is reduced
-            }
+            float airControlFactor = grounded ? 1f : 0.5f; // Full control on ground, limited in air
+            float currentSpeed = horizontal * speed * airControlFactor;
 
-            // Apply horizontal movement and vertical jump velocity
             rb.velocity = new Vector2(currentSpeed, rb.velocity.y);
             animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         }
