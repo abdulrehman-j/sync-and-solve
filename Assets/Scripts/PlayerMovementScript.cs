@@ -45,9 +45,7 @@ public class PlayerMovementScript : MonoBehaviour
             rb.gravityScale = 0;
             rb.velocity = Vector2.zero;
 
-//        if (playerScript.isDead) // Disable movement if player is dead
-
-//            return;
+           return;
         }
 
         horizontal = Input.GetAxis("Horizontal");
