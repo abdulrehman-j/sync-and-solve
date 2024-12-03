@@ -9,6 +9,7 @@ public class DoorScript : MonoBehaviour
     private bool playerInTrigger = false;  // Tracks if player is near the door
     public Animator rocketAnimator;  // Animator for the rocket door
     public GameObject levelCompleteUI;  // UI for "Level Complete"
+    public GameObject scoreUI;  // UI for "Score"
 
     private IEnumerator Start()
     {
@@ -68,7 +69,11 @@ public class DoorScript : MonoBehaviour
     private void ShowLevelCompleteUI()
     {
         if (levelCompleteUI != null)
+        {
             levelCompleteUI.SetActive(true);
+            scoreUI.SetActive(false);
+        }
+     
     }
 
     private IEnumerator ResetAnimatorAfterAnimation()
