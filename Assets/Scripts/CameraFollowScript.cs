@@ -11,11 +11,32 @@ public class CameraFollowScript : MonoBehaviour
 
     private float halfCameraWidth;
 
-    private void Start()
+    //private void Start()
+    //{
+    //    //Camera mainCamera = Camera.main;
+    //    //halfCameraWidth = mainCamera.orthographicSize * mainCamera.aspect;
+    //    //playerMovementScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementScript>();
+    //}
+    private IEnumerator Start()
     {
         Camera mainCamera = Camera.main;
         halfCameraWidth = mainCamera.orthographicSize * mainCamera.aspect;
+        // Wait until the player is spawned in the scene
+        while (GameObject.FindGameObjectWithTag("Player") == null)
+        {
+            yield return null; // Wait one frame
+        }
+
+        // Once the player is found, get the PlayerScript component
         playerMovementScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementScript>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+    private void Update()
+    {
+        if (playerMovementScript != null)
+        {
+            playerMovementScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementScript>();
+        }
     }
 
     private void LateUpdate()
