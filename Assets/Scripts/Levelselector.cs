@@ -19,6 +19,7 @@ public class Levelselector : MonoBehaviour
     }
     public void changeLevel()
     {
+        Time.timeScale = 1f; // Ensure the game is unpaused
         SceneManager.LoadScene(levelName);
     }
 }

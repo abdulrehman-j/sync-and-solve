@@ -77,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1563461623
-  m_SortingLayer: -1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f9cdc9420d784e58bfd021946386f9a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -174,9 +174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ae405d33e21fc43b8f5d5b14b5f390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  jumpingPower: 3
-  jumpTime: 0.25
+  speed: 6
+  jumpingPower: 4.5
+  jumpTime: 0.1
   grounded: 0
   groundCheck: {fileID: 2699425575817070609}
   groundMask:
@@ -198,7 +198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e712ca04007c81c4ab13208c61b4ab9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerColour: Blue
   hasKey: 0
   isDead: 0
   animator: {fileID: 6111481086538110195}
