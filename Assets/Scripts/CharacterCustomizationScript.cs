@@ -17,12 +17,12 @@ public class CharacterCustomization : MonoBehaviour
     public GameObject buttonPrefab;        // Prefab for the buttons
     public TextMeshProUGUI previewText;           // Text UI element for displaying character name on preview screen
     
-    private PlayerScript playerScript;
+    //private PlayerScript playerScript;
     private string selectedColour;
 
     private void Awake()
     {
-        playerScript = GetComponent<PlayerScript>();
+        //playerScript = GetComponent<PlayerScript>();
     }
     void Start()
     {
@@ -32,7 +32,7 @@ public class CharacterCustomization : MonoBehaviour
             ShowCharacterPreview(characterOptions[0].characterPrefab);
             DisplayCharacterName(characterOptions[0].name, characterOptions[0].buttonColor);
             selectedColour = characterOptions[0].name;
-            playerScript.playerColour = selectedColour;
+            PlayerScript.playerColour = selectedColour;
         }
 
         foreach (var option in characterOptions)
@@ -101,7 +101,7 @@ public class CharacterCustomization : MonoBehaviour
 
     public void saveColour()
     {
-        playerScript.playerColour = selectedColour;
+        PlayerScript.playerColour = selectedColour;
         Debug.Log(selectedColour + "saved");
     }
 }
