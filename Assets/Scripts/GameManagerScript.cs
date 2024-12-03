@@ -4,10 +4,10 @@ public class GameManagerScript : MonoBehaviour
 {
     public Transform spawnPos;  // Reference to the spawn position in the scene
 
-    public void SpawnPlayer(PlayerScript playerScript)
+    public void SpawnPlayer()
     {
         // Get the saved color name from PlayerScript
-        string colorName = playerScript.playerColour;  // e.g., "Red", "Blue", "Green"
+        string colorName = PlayerScript.playerColour;  // e.g., "Red", "Blue", "Green"
         Debug.Log("Player prefab: " + colorName);
 
         // Try to load the prefab from the Resources folder
@@ -26,17 +26,6 @@ public class GameManagerScript : MonoBehaviour
 
     private void Start()
     {
-        // Get the PlayerScript from the player GameObject in the scene
-        PlayerScript playerScript = GetComponent<PlayerScript>(); // This gets the first PlayerScript in the scene
-
-        if (playerScript != null)
-        {
-            // Call SpawnPlayer with the playerScript
-            SpawnPlayer(playerScript);
-        }
-        else
-        {
-            Debug.LogWarning("PlayerScript not found in the scene.");
-        }
+        SpawnPlayer();
     }
 }

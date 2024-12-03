@@ -19,6 +19,8 @@ public class PlatformMovementScript : MonoBehaviour
 
     private float originalGravity;
 
+
+
     private IEnumerator Start()
     {
         targetPos = pointB.position;
