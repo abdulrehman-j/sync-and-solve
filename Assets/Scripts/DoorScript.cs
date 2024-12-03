@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class DoorScript : MonoBehaviour
 {
     PlayerScript playerScript;
@@ -80,6 +80,9 @@ public class DoorScript : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(3f); // Wait for animation (use real-time since Time.timeScale = 0)
         rocketAnimator.updateMode = AnimatorUpdateMode.Normal; // Reset to default mode
+        Time.timeScale = 1;
+        SceneManager.LoadScene("LobbyScene");
+
     }
 
 }
