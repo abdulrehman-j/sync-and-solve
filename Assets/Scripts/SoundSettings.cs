@@ -10,9 +10,9 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!PlayerPrefs.HasKey("musicVolume"))
+        if (!PlayerPrefs.HasKey("GameMusic"))
         {
-            PlayerPrefs.SetFloat("musicVolume", 1f); // Set default volume
+            PlayerPrefs.SetFloat("GameMusic", 1f); // Set default volume
         }
 
         Load();
@@ -29,11 +29,11 @@ public class SoundManager : MonoBehaviour
 
     private void Load()
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        volumeSlider.value = PlayerPrefs.GetFloat("GameMusic");
     }
 
     private void Save()
     {
-        PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
+        PlayerPrefs.SetFloat("GameMusic", volumeSlider.value);
     }
 }
