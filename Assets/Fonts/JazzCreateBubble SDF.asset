@@ -659,8 +659,6 @@ MonoBehaviour:
     m_GlyphIndex: 61
     m_Scale: 1
   - m_ElementType: 1
-<<<<<<< HEAD
-=======
     m_Unicode: 66
     m_GlyphIndex: 37
     m_Scale: 1
@@ -681,7 +679,6 @@ MonoBehaviour:
     m_GlyphIndex: 46
     m_Scale: 1
   - m_ElementType: 1
->>>>>>> main
     m_Unicode: 82
     m_GlyphIndex: 53
     m_Scale: 1

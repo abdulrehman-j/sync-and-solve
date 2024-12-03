@@ -122,8 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &245532170
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +218,6 @@ Transform:
   - {fileID: 440081535}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> main
 --- !u!1001 &285685330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -343,8 +340,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7772e36e763fb141afeb251c89707b2, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1 &440081534
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +424,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
->>>>>>> main
 --- !u!1001 &705104659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -487,8 +481,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 726526ae1904bd647a0abd701c55ed79, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1 &859831357
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +565,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
->>>>>>> main
 --- !u!1 &1128498004
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,8 +722,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca39998d8a71967448925a3055358c17, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1 &1630397431
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +818,6 @@ Transform:
   - {fileID: 859831358}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> main
 --- !u!1001 &1869698794
 PrefabInstance:
   m_ObjectHideFlags: 0
