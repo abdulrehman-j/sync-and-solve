@@ -14,12 +14,22 @@ public class LaserScript : MonoBehaviour
 
     private void Awake()
     {
-        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
         laserCollider = GetComponent<Collider2D>(); // Get the collider of the laser
         laserRenderer = transform.GetChild(0).GetComponent<Renderer>();
 
         // Start the laser cycle
         StartCoroutine(LaserCycle());
+    }
+    private IEnumerator Start()
+    {
+       
+        // Wait until the player is spawned in the scene
+        while (GameObject.FindGameObjectWithTag("Player") == null)
+        {
+            yield return null; // Wait one frame
+        }
+        // Once the player is found, get the PlayerScript component
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
     }
 
     private IEnumerator LaserCycle()

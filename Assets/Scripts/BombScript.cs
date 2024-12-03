@@ -16,23 +16,32 @@ public class BombScript : MonoBehaviour
 
     private void Start()
     {
-        // Start by moving towards PointA
-        targetPosition = pointA.position;
-    }
+        
+        //// Wait until the player is spawned in the scene
+        //while (GameObject.FindGameObjectWithTag("Player") == null)
+        //{
+        //    yield return null; // Wait one frame
+        //}
 
+        // Once the player is found, get the PlayerScript component
+       targetPosition = transform.position;
+    }
+   
     private void Awake()
     {
-        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
         animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
+        if (playerScript == null) {
+            playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
+        }
         if (!isMoving)
             return;
         // Move the prefab towards the target position
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-
+        Debug.Log(targetPosition);
         // Check if the prefab has reached the target position
         if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
         {
