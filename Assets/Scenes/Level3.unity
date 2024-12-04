@@ -1496,6 +1496,14 @@ PrefabInstance:
       propertyPath: render
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2862645267823689634, guid: a3787f9adf9746a48b4648d99f9097d6, type: 3}
+      propertyPath: activeTime
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862645267823689634, guid: a3787f9adf9746a48b4648d99f9097d6, type: 3}
+      propertyPath: inactiveTime
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4289147504664491069, guid: a3787f9adf9746a48b4648d99f9097d6, type: 3}
       propertyPath: m_Name
       value: Laser (3)
