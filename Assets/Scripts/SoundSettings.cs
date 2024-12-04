@@ -12,7 +12,7 @@ public class SoundManager : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("GameMusic"))
         {
-            PlayerPrefs.SetFloat("GameMusic", 1f); // Set default volume
+            PlayerPrefs.SetFloat("GameMusic", 0.5f); // Set default volume
         }
 
         Load();
