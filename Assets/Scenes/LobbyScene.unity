@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 109212383}
   - component: {fileID: 109212382}
   - component: {fileID: 109212385}
+  - component: {fileID: 109212386}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: GameMusic
@@ -506,6 +507,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: MainMenuScene
+--- !u!114 &109212386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109212371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6165bb6aba42004a9d61ac4003799de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: Tutorial
 --- !u!1 &121832570
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,8 +2098,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play Tutorial
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2766,7 +2780,7 @@ GameObject:
   - component: {fileID: 2071586598}
   - component: {fileID: 2071586597}
   m_Layer: 5
-  m_Name: Play Tutorial
+  m_Name: Tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2799,7 +2813,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071586595}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6165bb6aba42004a9d61ac4003799de, type: 3}
   m_Name: 
@@ -2849,7 +2863,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2071586597}
+      - m_Target: {fileID: 109212386}
         m_TargetAssemblyTypeName: Levelselector, Assembly-CSharp
         m_MethodName: changeLevel
         m_Mode: 1
