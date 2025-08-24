@@ -12,7 +12,7 @@ solve the puzzles, avoid dangers, and launch your way back to safety.
 
 ## 🎮 Gameplay  
 - 👨‍🚀 Control the astronaut across platforms, buttons, and traps.  
-- ⛽ Collect **fuel tanks** — the key to unlock and power the rocket.  
+- ⛽ Collect **fuel tank** — the key to unlock and power the rocket.  
 - 🧩 Solve puzzles with **levers, buttons, and moving platforms**.  
 - 💣 Face enemies like **bombs and lasers**.  
 - 🚀 Complete each level by reaching the rocket once it’s fully fueled.  
@@ -26,7 +26,8 @@ solve the puzzles, avoid dangers, and launch your way back to safety.
 - 🧱 **Obstacles** – lever doors, pressure buttons, and box puzzles.  
 - 🎢 **Dynamic platforms** – moving platforms that test timing & precision.
 - 🎶 **Music** - Original soundtrack with adjusting volume.
-- 🖌️ **Customization** - Character customization
+- 📹 **Animation** – fluid character animations that feel alive
+- 🖌️ **Customization** – change colors of your player and make it truly yours
 - 🏆 Rocket launch sequence when the mission is complete.  
 
 ---
@@ -39,14 +40,26 @@ solve the puzzles, avoid dangers, and launch your way back to safety.
 ---
 
 ## 🛠 Tech Stack  
-- **Unity (C#)** – Game engine & scripting  
+- **Unity (C#)** – Game engine & scripting, version - 2022.3.37f1  
 - **2D Art Assets** – Astronaut, rocket, enemies, puzzles available at [Unity Asset Store](https://assetstore.unity.com/packages/2d/characters/2d-character-astronaut-182650) 
 - **Git** – Version control  
 
 ---
+## 📁 Project Structure
+```bash
+Assets/
+├── Animation/           # Animation controllers & assets
+├── Prefabs/             # Reusable game objects (player, enemies, etc.)
+├── Resources/           # Resource files (audio, images, etc.)
+├── Scenes/              # Game levels and scenes
+├── Scripts/             # C# scripts (game logic, player, enemies, etc.)
+└── Sound/               # Sound effects & background music
+
+```
+---
 
 
-## 👩‍💻 Contributors  
+## 🤝 Contributors  
 [Noor Ul Ain Asghar](https://github.com/NoorUlAin-Asghar)\
-[Huma Fatima](https://github.com/hhuma50)\
-[Abdul Rehman Junaid](https://github.com/abdulrehman-j)
+[Abdul Rehman Junaid](https://github.com/abdulrehman-j)\
+[Huma Fatima](https://github.com/hhuma50)
