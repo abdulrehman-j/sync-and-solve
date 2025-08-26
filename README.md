@@ -21,7 +21,7 @@ solve the puzzles, avoid dangers, and launch your way back to safety.
 
 ## ✨ Features  
 - 📘 **Tutorial level** to learn the basics.  
-- 🗺️ **5 progressively challenging levels**.  
+- 🗺️ **6 progressively challenging levels**.  
 - 💥 **Enemies** – lasers & bombs to dodge.  
 - 🧱 **Obstacles** – lever doors, pressure buttons, and box puzzles.  
 - 🎢 **Dynamic platforms** – moving platforms that test timing & precision.
