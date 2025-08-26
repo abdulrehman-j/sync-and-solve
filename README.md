@@ -34,7 +34,6 @@ solve the puzzles, avoid dangers, and launch your way back to safety.
 
 ## 🎥 Demo 
 Mockup previews available in [`/Docs`](Docs/)
-![Gameplay GIF](Docs/demo.gif)  
 
 #### 🎮 Play the Game
 [![Play on Unity Play](https://img.shields.io/badge/Play-Unity%20Play-blue?logo=unity)](https://play.unity.com/en/games/5e15b107-770c-46f7-b20d-811d6d6a2082/sync-solve)
