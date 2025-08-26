@@ -6,7 +6,7 @@
 and obstacles to **fuel the rocket and go home**. Each level challenges you to think, move, and react in sync — 
 solve the puzzles, avoid dangers, and launch your way back to safety.  
 
-![Gameplay Screenshot](Docs/screenshot.png)  
+![Gameplay Screenshot](Docs/Tutorial%20Scene.png)  
 
 ---
 
@@ -32,7 +32,8 @@ solve the puzzles, avoid dangers, and launch your way back to safety.
 
 ---
 
-## 🎥 Demo  
+## 🎥 Demo 
+Mockup previews available in /Docs
 ![Gameplay GIF](Docs/demo.gif)  
 
 [![Play Sync and Solve](https://img.shields.io/badge/▶️-Play%20Now-orange)](#)  
