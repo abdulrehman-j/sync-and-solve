@@ -33,7 +33,7 @@ solve the puzzles, avoid dangers, and launch your way back to safety.
 ---
 
 ## 🎥 Demo 
-Mockup previews available in /Docs
+Mockup previews available in [`/Docs`](Docs/)
 ![Gameplay GIF](Docs/demo.gif)  
 
 [![Play Sync and Solve](https://img.shields.io/badge/▶️-Play%20Now-orange)](#)  
