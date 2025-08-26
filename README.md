@@ -37,9 +37,7 @@ Mockup previews available in [`/Docs`](Docs/)
 ![Gameplay GIF](Docs/demo.gif)  
 
 #### 🎮 Play the Game
-<a href="=https://play.unity.com/en/games/5e15b107-770c-46f7-b20d-811d6d6a2082/sync-solve" target="_blank">
-  <img src="https://img.shields.io/badge/Play-Unity%20Play-blue?logo=unity" alt="Play on Unity Play"/>
-</a>
+[![Play on Unity Play](https://img.shields.io/badge/Play-Unity%20Play-blue?logo=unity)](https://play.unity.com/en/games/5e15b107-770c-46f7-b20d-811d6d6a2082/sync-solve)
 
 
 ---
