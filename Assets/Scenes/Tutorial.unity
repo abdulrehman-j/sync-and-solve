@@ -1091,7 +1091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1906860663903572280, guid: d742ce2530ab0af419c272278364fdee, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2673301357424293996, guid: d742ce2530ab0af419c272278364fdee, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1148,6 +1148,10 @@ PrefabInstance:
     - target: {fileID: 6150143981421542236, guid: d742ce2530ab0af419c272278364fdee, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616952378452792576, guid: d742ce2530ab0af419c272278364fdee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7369141441991100271, guid: d742ce2530ab0af419c272278364fdee, type: 3}
       propertyPath: m_IsActive
@@ -2998,7 +3002,6 @@ MonoBehaviour:
   player: {fileID: 0}
   smoothSpeed: 0.125
   offset: {x: 0, y: 0, z: 0}
-  playerMovementScript: {fileID: 0}
 --- !u!1 &1224613681
 GameObject:
   m_ObjectHideFlags: 0
@@ -4573,6 +4576,10 @@ PrefabInstance:
     - target: {fileID: 6332473450080374746, guid: 1cb3636eebeaef44f96826522cd7c626, type: 3}
       propertyPath: m_Name
       value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 6332473450080374746, guid: 1cb3636eebeaef44f96826522cd7c626, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

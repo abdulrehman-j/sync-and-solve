@@ -1,39 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
+    private const float defaultVolume = 1f;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        if (!PlayerPrefs.HasKey("GameMusic"))
+        // Only set to default ONCE per app launch, not every time settings open
+        if (!PlayerPrefs.HasKey("HasGameStarted"))
         {
-            PlayerPrefs.SetFloat("GameMusic", 0.5f); // Set default volume
+            AudioListener.volume = defaultVolume;
+            PlayerPrefs.SetInt("HasGameStarted", 1); // flag that game already started
+        }
+        else
+        {
+            // Keep current volume (don’t reset it)
+            AudioListener.volume = PlayerPrefs.GetFloat("GameMusic", defaultVolume);
         }
 
-        Load();
+        if (volumeSlider != null)
+            volumeSlider.value = AudioListener.volume;
     }
 
     public void ChangeVolume()
     {
-         if (volumeSlider != null)
-    {
-        AudioListener.volume = volumeSlider.value;
-        Save();
-    }
-    }
-
-    private void Load()
-    {
-        volumeSlider.value = PlayerPrefs.GetFloat("GameMusic");
-    }
-
-    private void Save()
-    {
-        PlayerPrefs.SetFloat("GameMusic", volumeSlider.value);
+        if (volumeSlider != null)
+        {
+            AudioListener.volume = volumeSlider.value;
+            PlayerPrefs.SetFloat("GameMusic", volumeSlider.value);
+        }
     }
 }
